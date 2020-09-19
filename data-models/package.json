@@ -1,0 +1,22 @@
+{
+  "name": "@dch/data-models",
+  "version": "1.0.0",
+  "description": "Twitter Crowd Manager Data Models",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc && tsc -d --skipLibCheck ./index.ts",
+    "clean": "rimraf dist",
+    "prepare": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.2"
+  },
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ]
+}

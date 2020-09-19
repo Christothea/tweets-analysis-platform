@@ -1,0 +1,17 @@
+.keywords-chip-list {
+  width: 100%;
+}
+
+keyword-input {
+  max-width: 500px;
+  width: 1000px;
+}
+
+.input-verify button {
+  margin-right: 8px;
+}
+
+
+mat-chip {
+  max-width: 300px;
+}

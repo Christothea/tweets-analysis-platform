@@ -1,0 +1,27 @@
+<h1>Statistics<h1>
+
+    <label>{{cacheService.summaryStatistics.totalTweets}} tweets</label>
+    <angular-tag-cloud [data]="wordsCloudData" [width]="wordsCloudOptions.width" [height]="wordsCloudOptions.height" [overflow]="wordsCloudOptions.overflow">
+    </angular-tag-cloud>
+
+    <mat-tab-group>
+      <mat-tab label="Tweeting">
+        <canvas baseChart #tweetingChart="base-chart" [datasets]="tweetingChartData" [labels]="tweetingLabels"
+          [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [colors]="barChartColors"
+          [chartType]="barChartType">
+        </canvas>
+      </mat-tab>
+      <mat-tab label="Mentioned">
+        <canvas baseChart #mentionedChart="base-chart" [datasets]="mentionedChartData" [labels]="mentionedLabels"
+          [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [colors]="barChartColors"
+          [chartType]="barChartType">
+        </canvas>
+      </mat-tab>
+      <mat-tab label="Words">
+        <canvas baseChart #wordsCountChart="base-chart" [datasets]="wordsCountChartData" [labels]="wordsCountLabels"
+          [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [colors]="barChartColors"
+          [chartType]="barChartType">
+        </canvas>
+      </mat-tab>
+
+    </mat-tab-group>

@@ -1,0 +1,29 @@
+<h1>Keywords List</h1>
+
+<mat-form-field class="keywords-chip-list">
+    <div class="input-verify">
+      <input class="keyword-input" placeholder="New Keyword..."
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)">
+
+      <button mat-raised-button color="primary" (click)="verify()">Verify</button>
+    </div>
+
+    <h3>Selected Keywords</h3>
+
+    <mat-chip-list #chipList class="mat-chip-list-stacked" aria-label="Keyword selection" aria-orientation="vertical">
+      <mat-chip 
+      *ngFor="let keyword of cacheService.keywords" 
+      removable
+      selectable
+      selected [color]="keyword.color"
+      (removed)="remove(keyword)">
+        {{keyword.text}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+</mat-form-field>
+  
+  
